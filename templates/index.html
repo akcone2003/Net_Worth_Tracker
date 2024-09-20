@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Net Worth Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for visualizations -->
+</head>
+<body>
+    <div class="container">
+        <h1>Net Worth Tracker</h1>
+
+        <div id="net-worth-section">
+            <h2>Your Net Worth</h2>
+            <div id="net-worth">Loading...</div>
+        </div>
+
+        <div id="assets-section">
+            <h2>Your Assets</h2>
+            <table id="assets-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div id="liabilities-section">
+            <h2>Your Liabilities</h2>
+            <table id="liabilities-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div id="spending-section">
+            <h2>Your Spending</h2>
+            <table id="spending-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Visualization Section -->
+        <div id="charts-section">
+            <h2>Assets and Liabilities Visualization</h2>
+            <canvas id="netWorthChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Add reference to app.js -->
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

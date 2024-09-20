@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -33,11 +33,10 @@ class Spending(db.Model):
 with app.app_context():
     db.create_all()
 
-# Example endpoint for testing
+# Serve the index.html template
 @app.route('/')
 def home():
-    return "Net Worth Tracker API is running!"
-
+    return render_template('index.html')
 
 # Adding routes for assets, liabilities, and expenses
 @app.route('/assets', methods=['POST'])
